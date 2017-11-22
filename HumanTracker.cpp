@@ -2,6 +2,7 @@
 #include "SerialPort.h"
 #include "glut.h"
 #include "Drawer.h"
+
 namespace FallRescue
 {
 HumanTracker::HumanTracker()
@@ -10,20 +11,40 @@ HumanTracker::HumanTracker()
 
 bool HumanTracker::initKinect()
 {
-	if (FAILED(GetDefaultKinectSensor(&sensor))) {
+	if (FAILED(GetDefaultKinectSensor(&sensor))) 
+	{
 		return false;
 	}
-	if (sensor) {
+	if (sensor) 
+	{
 		sensor->get_CoordinateMapper(&mapper);
 
 		sensor->Open();
-		sensor->OpenMultiSourceFrameReader(
+		sensor->OpenMultiSourceFrameReader
+			(
 			FrameSourceTypes::FrameSourceTypes_Body,
-			&reader);
+			&reader
+			);
+
 		return reader;
 	}
-	else {
+	else 
+	{
 		return false;
+	}
+}
+
+void HumanTracker::getKinectData()
+{
+	IMultiSourceFrame* frame = NULL;
+	if (SUCCEEDED(reader->AcquireLatestFrame(&frame))) 
+	{
+		glUnmapBuffer(GL_ARRAY_BUFFER);
+		getBodyData(frame);
+	}
+	if (frame) 
+	{
+		frame->Release();
 	}
 }
 
@@ -80,15 +101,7 @@ void HumanTracker::getBodyData(IMultiSourceFrame* frame)
 	if (bodyframe) bodyframe->Release();
 }
 
-void HumanTracker::getKinectData()
-{
-	IMultiSourceFrame* frame = NULL;
-	if (SUCCEEDED(reader->AcquireLatestFrame(&frame))) {
-		glUnmapBuffer(GL_ARRAY_BUFFER);
-		getBodyData(frame);
-	}
-	if (frame) frame->Release();
-}
+
 
 void HumanTracker::transferData(std::string activity)
 {

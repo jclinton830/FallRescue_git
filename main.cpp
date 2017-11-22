@@ -9,9 +9,8 @@
 #include <stdlib.h>
 #include <string>
 #include <minwindef.h>
-
+#include <Ole2.h>
 using namespace FallRescue;
-
 
 int main(int argc, char* argv[])
 {
@@ -20,8 +19,11 @@ int main(int argc, char* argv[])
 	Drawer drawer;
 
 	if (!glut.init(argc, argv)) return 1;
-	if (!humanTracker.initKinect()) return 1;
-
+	if (!humanTracker.initKinect())
+	{
+		std::cout << "kinect initialised" << std::endl;
+		return 1;
+	}
 	// OpenGL setup
 	glClearColor(0, 0, 0, 0);
 	glClearDepth(1.0f);

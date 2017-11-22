@@ -14,7 +14,8 @@ glut::~glut()
 }
 
  void glut::draw() {
-	HumanTracker drawKinectData();
+	Drawer draw;
+	draw.drawKinectData();
 	glutSwapBuffers();
 }
 

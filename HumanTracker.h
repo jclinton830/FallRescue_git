@@ -16,19 +16,20 @@ public:
 	HumanTracker();
 	~HumanTracker();
 	bool initKinect();
-	void getBodyData(IMultiSourceFrame* frame);
 	void getKinectData();
+	void getBodyData(IMultiSourceFrame* frame);
 	void transferData(std::string activity);
 
 public:
 	float					TicToc;
 	BOOLEAN tracked;							// Whether we see a body
-private:
 	// Kinect Variables
 	IKinectSensor* sensor;             // Kinect sensor
 	IMultiSourceFrameReader* reader;   // Kinect data source
 	ICoordinateMapper* mapper;         // Converts between depth, color, and 3d coordinates
-	
+
+private:
+
 	INT64                   m_nLastCounter;
 	double                  m_fFreq;
 	DWORD                   m_nFramesSinceUpdate;

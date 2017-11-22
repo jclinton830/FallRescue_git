@@ -20,7 +20,6 @@ Drawer::Drawer()
 {
 }
 
-
 Drawer::~Drawer()
 {
 }
@@ -121,13 +120,13 @@ void Drawer::drawBoundingBox()
 			std::cout << "SEATED" << std::endl;
 			return;
 		}
-
 	}
 }
 
-void Drawer::drawKinectData() {
-
-	HumanTracker getKinectData();
+void Drawer::drawKinectData() 
+{
+	HumanTracker getKinectData_;
+	getKinectData_.getKinectData();
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnableClientState(GL_VERTEX_ARRAY);
@@ -153,6 +152,7 @@ void Drawer::drawKinectData() {
 			//Draw Joints
 			glBegin(GL_POINTS);
 			glColor3f(0.f, 0.f, 1.f);
+
 			glVertex3f(lthumb.X, lthumb.Y, lthumb.Z);
 			glVertex3f(rthumb.X, rthumb.Y, rthumb.Z);
 			glVertex3f(lhandtip.X, lhandtip.Y, lhandtip.Z);
@@ -254,9 +254,7 @@ void Drawer::drawKinectData() {
 			glVertex3f(rfoot.X, rfoot.Y, rfoot.Z);
 			glEnd();
 
-
 			drawBoundingBox();
-
 		}
 	}
 

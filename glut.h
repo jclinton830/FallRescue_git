@@ -6,7 +6,7 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include <gl/glut.h>
-
+#include <Ole2.h>
 #pragma once
 
 namespace FallRescue
