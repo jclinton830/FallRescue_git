@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FallRescue", "FallRescue.vcxproj", "{C1DC89FB-9F12-4FE4-B353-71172F240CD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1DC89FB-9F12-4FE4-B353-71172F240CD4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C1DC89FB-9F12-4FE4-B353-71172F240CD4}.Debug|Win32.Build.0 = Debug|Win32
+		{C1DC89FB-9F12-4FE4-B353-71172F240CD4}.Release|Win32.ActiveCfg = Release|Win32
+		{C1DC89FB-9F12-4FE4-B353-71172F240CD4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
